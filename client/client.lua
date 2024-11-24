@@ -25,7 +25,7 @@ function PlayBell(location)
             local soundId = GetSoundId()
             Citizen.InvokeNative(0xDCF5BA95BBF0FABA, soundId, bellData.SoundName, bellData.coords.x, bellData.coords.y, bellData.coords.z, bellData.SoundSet, false, 0, true)
             isBellPlaying[location] = true
-            Wait(Config.BellThreshold * 1000)
+            Wait(bellData.BellThreshold * 1000)
             Citizen.InvokeNative(0x531A78D6BF27014B, bellData.SoundSet)
             Citizen.InvokeNative(0x353FC880830B88FA, soundId)
             isBellPlaying[location] = false
